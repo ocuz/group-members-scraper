@@ -1,6 +1,6 @@
 # group members scraper
 
-This is a script that;
+This is a script that:
 - uses the roblox groups API endpoint to scrape all members of a specific roblox group with their group ID
 - uses pagination cursors
 - writes in a csv file
