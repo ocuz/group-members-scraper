@@ -10,12 +10,10 @@ CURSORS_FILE = "cursors.txt"
 
 RATE_DELAY = 0
 
-
 def clean_field(value):
     if isinstance(value, str):
         return value.replace(",", "\\u002c")
     return value
-
 
 def fetch_page(group_id, cursor):
     url = GROUP_URL.format(group_id=group_id, cursor=cursor)
@@ -44,7 +42,6 @@ def fetch_page(group_id, cursor):
             print(f"  request failed ({e}), retrying in 2s...")
             time.sleep(2)
 
-
 def write_row(writer, user, role):
     writer.writerow([
         user.get("userId", ""),
@@ -55,7 +52,6 @@ def write_row(writer, user, role):
         clean_field(role.get("name", "")),
         role.get("rank", ""),
     ])
-
 
 def main():
     print("Roblox group member scraper\n")
@@ -141,7 +137,6 @@ def main():
     finally:
         csv_file.close()
         cursors_file.close()
-
 
 if __name__ == "__main__":
     main()
